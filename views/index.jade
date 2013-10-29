@@ -1,0 +1,54 @@
+extends layout
+
+block content
+	div.container
+		div.page-header
+			h1= title
+		div.row
+			div.col-md-8
+				form(role="form", name="add-tvshow")
+					div.form-group
+						label(for="title") Título de la pelicula
+						input(type="text", class="form-control", id="title", placeholder="Escribe el título")
+					div(class="row form-group")
+						div.col-lg-2
+							label(for="year") Año
+							input(type="text", class="form-control", id="year", placeholder="AAAA")
+						div.col-lg-4
+							label(for="country") País
+							select(id="country" class="form-control")
+								option Seleccionar
+								option Alemania
+								option Argentina
+								option Australia
+								option España
+								option Estados Unidos
+								option Italia
+								option Francia
+								option Reino Unido
+								option Otro
+					div.form-group
+						label(for="poster") Poster
+						input(type="text", class="form-control", id="poster", placeholder="Pega la URL de la imagen del poster")
+					div(class="row form-group")
+						div.col-lg-2
+							label(for="seasons") Temporada
+							input(type="text", class="form-control", id="seasons", placeholder="NN")
+						div.col-lg-4
+							label(for="genre") Género
+							select(id="genre" class="form-control")
+								option Seleccionar
+								option Drama
+								option Fantasy
+								option Sci-Fi
+								option Thriller
+								option Comedy
+					div.form-group
+						label(for="summary") Sinopsis
+						textarea(class="form-control", id="summary", rows="8")
+					hr
+					button(type="submit", class="btn btn-default pull-right", id="savetv") Guardar
+			div.col-md-4
+				div(class="panel panel-info", id="panel-entrada", style="display:none")
+					div.panel-heading Consultar en el API (JSON)
+					div(class="panel-body", id="entrada")

@@ -19,7 +19,7 @@ module.exports = function(app) {
   findById = function(req, res) {
           TVShow.findById(req.params.id, function(err, tvshow) {
                   if(!err) {
-        console.log('GET /tvshow/' + req.params.id);
+        				 		  console.log('GET /tvshow/' + req.params.id);
                           res.send(tvshow);
                   } else {
                           console.log('ERROR: ' + err);
