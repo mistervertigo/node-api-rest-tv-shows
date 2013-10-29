@@ -3,15 +3,24 @@ var express = require("express"),
     http    = require("http"),
     server  = http.createServer(app);
 	 mongoose = require('mongoose'); 
+	 routes = require('./routes');
+	 path = require('path');
 
 app.configure(function () {
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
+  app.set('views', path.join(__dirname, 'views'));
+  app.set('view engine', 'jade');
+  app.use(express.logger('dev'));
+  app.use(express.static(path.join(__dirname, 'public')));
 });
 
-app.get('/', function(req, res) {
-  res.send("Hello world!");
+
+app.get('/', function(req, res){
+  res.render('index', {
+    title: 'Añade una serie de TV'
+  });
 });
 
 mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
