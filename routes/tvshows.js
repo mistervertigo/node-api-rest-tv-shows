@@ -66,6 +66,17 @@ module.exports = function(app) {
 	     });
 	   });
 	 }
-  
+	 //DELETE - Delete a TVShow with specified ID
+	 deleteTVShow = function(req, res) {
+	   TVShow.findById(req.params.id, function(err, tvshow) {
+	     tvshow.remove(function(err) {
+	       if(!err) {
+	   	console.log('Removed');
+	       } else {
+	   	console.log('ERROR: ' + err);
+	       }
+	     })
+	   });
+	 }
 
 }
