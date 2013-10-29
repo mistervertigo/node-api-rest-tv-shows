@@ -34,7 +34,7 @@ module.exports = function(app) {
 
           var tvshow = new TVShow({
                   title:    req.body.title,
-                  year:           req.body.year,
+                  year:     req.body.year,
                   country:  req.body.country,
                   poster:   req.body.poster,
                   seasons:  req.body.seasons,
