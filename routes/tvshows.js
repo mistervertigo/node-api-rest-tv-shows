@@ -12,6 +12,16 @@ module.exports = function(app) {
   		}
   	});
   };
+  //GET - Return a TVShow with specified ID
+  findById = function(req, res) {
+    TVShow.findById(req.param.id, function(err, tvshow) {
+      if(!err) {
+        res.send(tvshow);
+      } else {
+        console.log('ERROR: ' + err);
+      }
+    });
+  };
   
   
 
