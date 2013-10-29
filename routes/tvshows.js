@@ -78,5 +78,10 @@ module.exports = function(app) {
 	     })
 	   });
 	 }
-
+	 //Link routes and functions
+	 app.get('/tvshows', findAllTVShows);
+	 app.get('/tvshow/:id', findById);
+	 app.post('/tvshow', addTVShow);
+	 app.put('/tvshow/:id', updateTVShow);
+	 app.delete('/tvshow/:id', deleteTVShow);
 }
