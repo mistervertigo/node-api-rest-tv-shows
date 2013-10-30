@@ -19,7 +19,7 @@ $('#savetv').click(function(){
 				  //alert(data._id);
 				  console.log(data);
 				  $('#entrada').html('<a href="/tvshow/'+ data._id +'">Ver '+data.title+' en el API >></a> ');
-				  $('#panel-entrada').show('slide-down');
+				  $('#panel-entrada').show();
            }
            , error: function(jqXHR, textStatus, err){
                alert('text status '+textStatus+', err '+err)
