@@ -23,11 +23,16 @@ app.get('/', function(req, res){
   });
 });
 
+var uristring = 
+  process.env.MONGOLAB_URI || 
+  process.env.MONGOHQ_URL || 
+  'mongodb://localhost/tvshows';
+
 mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
   if(err) {
-    console.log('ERROR: connecting to Database. ' + err);
+    console.log('ERROR: connecting to Database. ' + uristring + '. ' + err);
   } else {
-    console.log('Connected to Database');
+    console.log('Connected to Database ' + uristring);
   }
 });
 
