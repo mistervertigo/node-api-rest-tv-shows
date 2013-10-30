@@ -19,7 +19,7 @@ module.exports = function(app) {
   findById = function(req, res) {
           TVShow.findById(req.params.id, function(err, tvshow) {
                   if(!err) {
-        				 		  console.log('GET /tvshow/' + req.params.id);
+        				 		   console.log('GET /tvshow/' + req.params.id);
                           res.send(tvshow);
                   } else {
                           console.log('ERROR: ' + err);
@@ -33,7 +33,7 @@ module.exports = function(app) {
           console.log(req.body);
 
           var tvshow = new TVShow({
-                  nametitle:    req.body.nametitle,
+                  title:    req.body.title,
                   year:     req.body.year,
                   country:  req.body.country,
                   poster:   req.body.poster,
@@ -56,7 +56,7 @@ module.exports = function(app) {
   //PUT - Update a register already exists
   updateTVShow = function(req, res) {
           TVShow.findById(req.params.id, function(err, tvshow) {
-                  tvshow.nametitle   = req.body.petId;
+                  tvshow.title   = req.body.petId;
                   tvshow.year    = req.body.year;
                   tvshow.country = req.body.country;
                   tvshow.poster  = req.body.poster;
