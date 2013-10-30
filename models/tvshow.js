@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
 
 var tvshowSchema = new Schema({
-  title:    { type: String },
+  nametitle:    { type: String },
   year:     { type: Number },
   country:  { type: String },
   poster:   { type: String },

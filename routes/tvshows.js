@@ -33,7 +33,7 @@ module.exports = function(app) {
           console.log(req.body);
 
           var tvshow = new TVShow({
-                  title:    req.body.title,
+                  nametitle:    req.body.nametitle,
                   year:     req.body.year,
                   country:  req.body.country,
                   poster:   req.body.poster,
@@ -56,7 +56,7 @@ module.exports = function(app) {
   //PUT - Update a register already exists
   updateTVShow = function(req, res) {
           TVShow.findById(req.params.id, function(err, tvshow) {
-                  tvshow.title   = req.body.petId;
+                  tvshow.nametitle   = req.body.petId;
                   tvshow.year    = req.body.year;
                   tvshow.country = req.body.country;
                   tvshow.poster  = req.body.poster;
