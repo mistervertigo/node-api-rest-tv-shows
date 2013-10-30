@@ -18,7 +18,7 @@ $('#savetv').click(function(){
               alert('Se ha añadido una nueva Serie de TV!');
 				  //alert(data._id);
 				  console.log(data);
-				  $('#entrada').html('<a href="/tvshow/'+ data._id +'">Ver '+data.title+' en el API >></a> ');
+				  $('#entrada').html('<a href="/tvshow/'+ data._id +'" class="btn btn-default">Ver <strong>'+data.title+'</strong> en el API >></a> ');
 				  $('#panel-entrada').show();
            }
            , error: function(jqXHR, textStatus, err){
